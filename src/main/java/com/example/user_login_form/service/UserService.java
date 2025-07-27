@@ -2,7 +2,7 @@ package com.example.user_login_form.service;
 
 
 import com.example.user_login_form.model.User;
-import com.example.user_login_form.repositary.UserRepositary;
+import com.example.user_login_form.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,20 +12,20 @@ import java.util.List;
 public class UserService {
 
     @Autowired
-    private UserRepositary userRepositary;
+    private UserRepository userRepository;
 
     public String addUser(User userReq){
-        userRepositary.save(userReq);
+        userRepository.save(userReq);
         return "User saved Successfully into Database";
 
     }
 
     public List<User> getAllUsers(){
-        return userRepositary.findAll();
+        return userRepository.findAll();
     }
 
     public String deleteUserById(int id) {
-        userRepositary.deleteById(id);
+        userRepository.deleteById(id);
         return "User with ID " + id + " deleted successfully.";
     }
 
