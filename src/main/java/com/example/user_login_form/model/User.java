@@ -3,12 +3,12 @@ package com.example.user_login_form.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "userdetails")
+@Table(name = "userinfo")
 public class User {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "name", nullable = false)

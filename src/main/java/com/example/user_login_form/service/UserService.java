@@ -24,9 +24,6 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public String deleteUserById(int id) {
-        userRepository.deleteById(id);
-        return "User with ID " + id + " deleted successfully.";
-    }
+
 
 }
